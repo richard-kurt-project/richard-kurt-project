@@ -74,7 +74,7 @@ public class ContactManager {
         System.out.println("Name\t\tPhone number");
         System.out.println("------------------------");
         for (Contact contact : contacts) {
-            System.out.println(contact.getName() + "\t\t" + contact.getPhoneNumber());
+            System.out.println(contact.getName() + "\t\t |" + contact.getPhoneNumber());
         }
     }
 
