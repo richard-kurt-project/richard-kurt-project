@@ -83,8 +83,14 @@ public class ContactManager {
         System.out.print("Enter the name: ");
         String name = scanner.nextLine();
         System.out.print("Enter the phone number: ");
-        String phoneNumber = scanner.nextLine();
-        Contact contact = new Contact(name, phoneNumber);
+        String phoneNumberStr = scanner.nextLine();
+
+        if (!InRangeInt(phoneNumberStr)) {
+            System.out.println("Not a valid phone number.");
+            return;
+        }
+
+        Contact contact = new Contact(name, phoneNumberStr);
         contacts.add(contact);
         System.out.println("Contact added successfully.");
     }
@@ -134,4 +140,21 @@ public class ContactManager {
             System.out.println("Error writing contacts to file.");
         }
     }
+
+    public static boolean InRangeInt(String phoneNumberStr) {
+        // Check if the string length is exactly 7 characters
+        if (phoneNumberStr.length() != 10) {
+            return false;
+        }
+
+        // Verify if all characters in the string are digits
+        for (char c : phoneNumberStr.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+
+        return true; // If all conditions are met
+    }
+
 }
