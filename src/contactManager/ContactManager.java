@@ -9,7 +9,8 @@ public class ContactManager {
     // fields
     private static final String FILE_PATH = "contacts.txt";
     private static final String DELIMITER = ",";
-/// main
+
+    /// main
     public static void main(String[] args) {
         List<Contact> contacts = loadContactsFromFile();
         int choice;
@@ -82,6 +83,20 @@ public class ContactManager {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the name: ");
         String name = scanner.nextLine();
+
+        if (!IsValidContactName(name)) {
+            System.out.println("Not a valid contact name.");
+            return;
+        }
+
+        // Check if a contact with the same name already exists
+        for (Contact existingContact : contacts) {
+            if (existingContact.getName().equalsIgnoreCase(name)) {
+                System.out.println("Contact already exists.");
+                return;
+            }
+        }
+
         System.out.print("Enter the phone number: ");
         String phoneNumberStr = scanner.nextLine();
 
@@ -94,6 +109,8 @@ public class ContactManager {
         contacts.add(contact);
         System.out.println("Contact added successfully.");
     }
+
+
 
     private static void searchContactByName(List<Contact> contacts) {
         Scanner scanner = new Scanner(System.in);
@@ -155,6 +172,15 @@ public class ContactManager {
         }
 
         return true; // If all conditions are met
+    }
+
+    public static boolean IsValidContactName(String contactNameStr) {
+        for (char c : contactNameStr.toCharArray()) {
+            if (Character.isDigit(c)) {
+                return false; // Contains a digit, so not a valid name
+            }
+        }
+        return true; // If no digits found, it's a valid name
     }
 
 }
