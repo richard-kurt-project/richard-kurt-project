@@ -9,6 +9,7 @@ public class ContactManager {
     // fields
     private static final String FILE_PATH = "contacts.txt";
     private static final String DELIMITER = ",";
+    private static final Scanner scanner = new Scanner(System.in);
 
     /// main
     public static void main(String[] args) {
@@ -109,7 +110,6 @@ public class ContactManager {
         contacts.add(contact);
         System.out.println("Contact added successfully.");
     }
-
 
 
     private static void searchContactByName(List<Contact> contacts) {
