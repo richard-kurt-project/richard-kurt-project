@@ -16,6 +16,10 @@ public class ContactManager {
 
     /// main
     public static void main(String[] args) {
+        execute();
+    }
+
+    private static void execute(){
         List<Contact> contacts = loadContactsFromFile();
         int choice;
         do {
@@ -43,24 +47,6 @@ public class ContactManager {
         writeContactsToFile(contacts);
     }
 
-    //    private static List<Contact> loadContactsFromFile() {
-//        List<Contact> contacts = new ArrayList<>();
-//        try (Scanner scanner = new Scanner(new File(FILE_PATH))) {
-//            while (scanner.hasNextLine()) {
-//                String line = scanner.nextLine();
-//                String[] parts = line.split(DELIMITER);
-//                if (parts.length == 2) {
-//                    String name = parts[0];
-//                    String phoneNumber = parts[1];
-//                    Contact contact = new Contact(name, phoneNumber);
-//                    contacts.add(contact);
-//                }
-//            }
-//        } catch (FileNotFoundException e) {
-//            System.out.println("Contacts file not found. Creating a new one.");
-//        }
-//        return contacts;
-//    }
     private static List<Contact> loadContactsFromFile() {
         List<Contact> contacts = new ArrayList<>();
         try {
@@ -80,6 +66,7 @@ public class ContactManager {
         return contacts;
     }
 
+    // main menu Method
     private static int showMainMenu() {
         System.out.println("Main Menu");
         System.out.println("1. View contacts");
@@ -93,6 +80,7 @@ public class ContactManager {
         return userChoice;
     }
 
+    // Contact display format
     private static void viewContacts(List<Contact> contacts) {
         System.out.println("Contacts:");
         System.out.println("Name\t\tPhone number");
@@ -102,13 +90,18 @@ public class ContactManager {
         }
     }
 
+
+    ///Kurt go over in demo
     private static void addContact(List<Contact> contacts) {
         System.out.print("Enter the contact name: ");
         String name = scanner.nextLine();
         String trimmedName = name.trim();
+
+        ///IF NAME IS ADDED FUNNY RESPONSE
         if (trimmedName.equalsIgnoreCase("kurt")) {
             try {
-                System.out.println("<a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">Top Secret Government Files on Aliens </a>");
+                System.out.println("https://www.youtube.com/watch?v=p7YXXieghto");
+                System.out.println("Top Secret Government Files on Aliens");
             } catch (Exception e) {
                 // Handle the exception here if needed
                 e.printStackTrace();
@@ -165,7 +158,60 @@ public class ContactManager {
                 e.printStackTrace();
             }
         }
-
+        if (trimmedName.equalsIgnoreCase("jman")) {
+            try {
+                System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣷⠦⣤⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣄⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣀⣴⣾⣿⡿⣋⣴⣿⣿⣿⣿⣿⣿⣦⣤⣽⣿⣷⣦⣀⣹⣿⣿⣷⣴⣿⣿⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣹⣿⣿⡏⢹⣟⣼⠏⠛⢻⣿⣿⣿⡿⠏⣉⣭⣿⣿⣿⣯⠉⣿⣿⣿⣿⣿⡹⣿⣿⣿⣿⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⠟⢡⣤⡄⠋⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠹⣿⣿⣿⣿⣷⣄⠙⢿⣿⣿⣿⣧⡄⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⠏⣿⢰⣿⣿⠇⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⡙⢿⣷⣆⠉⢻⣿⣿⣿⡄⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⢰⣿⠀⢻⣏⠀⢻⣿⣿⣿⣿⡿⠛⢿⣿⠟⠛⠙⣻⣿⣿⣿⣿⣿⣿⣿⣿⣧⣄⣽⣿⣧⢀⣿⣿⣿⣿⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⠀⣿⡇⢰⣿⠀⠀⠻⠿⣿⣷⣶⣶⣾⣋⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠈⣿⣿⣿⣿⣿⣿⣟⣠⣶⡾⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⢀⣤⣤⣤⣤⣤⣴⣿⡿⠛⣿⣿⣿⡇⢻⣿⡈⠛⠀⠀⣠⣤⣄⡙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢠⡛⢿⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀\n" +
+                        "⠀⠐⢶⣄⣀⣰⣾⡿⠿⠿⠿⠿⠿⠛⠀⣠⣿⣿⣿⠷⣮⡉⠉⠀⢰⣿⣿⣿⣿⣿⣦⠤⠀⢸⣿⡿⠋⠹⠿⠿⠿⢿⣿⣿⣿⣿⣿⣷⣿⣧⡀⢻⣿⣿⣿⣿⣧⣴⣶⠂⠀\n" +
+                        "⠀⠀⠀⠈⠉⠙⠉⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⡇⠀⣿⣿⣆⠀⣶⡉⠛⠛⠿⣿⣿⠀⠀⣿⣿⣥⣤⣴⣷⡶⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣧⣼⣿⣿⣿⣿⡞⢿⠃⠀⠀\n" +
+                        "⢀⣠⠶⠒⠚⠛⠾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠇⣸⣿⣿⣏⠀⠈⠿⣷⡦⣤⣈⣉⣀⡀⠉⠿⣿⣿⣿⣯⣛⣿⢿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣷⣶⠀\n" +
+                        "⠈⠀⠀⣀⣀⣠⣤⣬⡿⠟⠿⣿⣿⣿⣿⡿⠛⢁⣴⣿⣿⣿⣿⠀⠀⠀⠻⣷⣄⠀⠙⣛⠿⣷⣦⡘⠿⠿⢿⣯⣥⣄⣿⣿⣿⣿⣿⡀⠻⣿⣿⣿⣿⡿⣋⠁⠀⢸⣿⠃⠀\n" +
+                        "⠀⠀⠈⠙⠻⣿⣏⣁⠀⠀⠀⠀⠈⢉⣀⠤⠾⠻⣿⣿⣿⠿⢋⣠⣤⣤⠄⠈⠛⢷⣦⣌⠳⣮⣉⠛⠂⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⡿⠇⣻⡷⠀⣙⣻⡀⠀\n" +
+                        "⠀⠀⠀⢀⡴⠿⣿⣿⣿⣿⣷⣶⣿⣿⣁⠀⠀⠀⠹⠟⠦⣶⢛⣩⣽⢷⣤⣤⣤⣄⠙⠿⠧⠈⠿⠇⠈⣛⠛⠿⢿⣿⡿⠛⢻⣿⣿⣿⡿⠛⢉⣭⣶⡿⠛⣀⡰⣿⡿⠿⠇\n" +
+                        "⠀⠀⣀⣀⣀⠀⠸⣿⣿⣿⣿⠿⠿⣿⣿⣿⣷⣶⣶⣦⣤⣾⣿⠟⠁⠀⠉⠉⠙⣿⠀⠀⣰⣷⣦⠀⠀⠙⠷⣦⣄⣀⣳⣦⣼⠿⠟⠋⢀⣶⣿⣿⠋⣠⣾⠿⢈⣿⣦⠀⠀\n" +
+                        "⠀⠉⠙⠛⠻⢷⣤⡈⠙⠛⢁⣠⣴⣿⣿⣿⣿⣿⣿⣿⠿⠛⠁⢀⠀⠀⣀⡀⠀⠛⠒⠚⠁⠈⣯⣠⠖⠒⣤⠀⠈⣉⣙⡋⠀⠀⢻⡗⠈⢿⣿⠏⡘⠛⢃⣴⠿⣿⣿⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⢹⣿⣶⣶⣿⣿⣿⠏⠀⣠⣾⣿⠿⠆⠀⠀⠀⠈⢉⡙⠻⠿⢿⣶⣄⠀⠀⠀⠉⠁⠀⠀⣸⣇⡴⠿⠿⠿⡆⠀⢀⣀⣀⣀⣀⣼⣿⣶⣿⣿⡆⢹⣿⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠸⢿⣿⣿⣿⡿⠋⠀⣼⣿⣿⡁⠀⠀⠀⠀⠀⠀⠀⠳⣄⡀⠀⠉⠛⢷⣦⣄⠀⠀⠀⠐⠋⠀⠀⠀⠀⠀⢳⡴⠋⠉⠀⢹⣿⣿⣿⣿⣿⠋⠀⢸⣿⠇⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠈⠻⠷⣦⣤⣤⠼⠻⠿⠶⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣸⣿⣿⣿⣿⣿⠀⠀⢸⣿⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⡶⠞⠛⠛⠛⠛⣻⣿⣿⣿⣿⣿⣿⠀⠀⣾⠋⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⢿⣅⣀⣀⣀⠀⢀⣾⣿⣿⣿⣿⣿⡟⠉⢀⣾⡏⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠃⠈⠉⠉⠉⠁⣠⣿⣿⣿⣿⣿⣿⣿⡇⠀⣾⣿⠇⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⢀⣾⠃⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⣿⠁⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⡿⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⢿⡄⠀⠀⠀⠀⣼⡟⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢀⣿⡟⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣇⣀⣤⣾⣿⣿⣿⣿⣿⣷⣦⣼⣷⡀⠀⠀⢰⣿⣀⣤⣾⣿⣿⣿⣿⣿⣿⠟⣡⡴⠛⣿⣿⣿⣇⣿⠟⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⠟⠉⠀⠀⠈⠙⠻⣿⣿⣿⣿⣦⣤⣾⣿⣿⣿⣿⠟⠉⣡⣾⡟⣱⡿⠋⣠⣾⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡇⠀⠀⠀⠲⣤⣤⣀⣀⠈⠉⠉⣻⣿⠛⢿⣿⣿⡇⠀⢠⣿⡿⢱⣿⠁⣴⣿⠋⢀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⠟⠛⠂⣴⡿⠁⠀⣸⣿⣿⡇⢀⣿⣿⠃⢸⢣⣾⣿⠇⢠⣾⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣷⣀⠀⠀⣿⣿⣿⠀⢀⣼⡟⠀⠀⠀⣿⣿⣿⡇⢸⣿⡟⠀⢰⣿⡿⠁⢠⣾⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣿⣿⣿⣷⣶⣾⣿⣏⣴⡿⠋⠀⠀⠀⢸⣿⣿⣿⣿⢸⣿⠇⣰⣿⠟⠁⣰⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠛⠛⠛⠋⠁⠀⠀⠀⠀⢀⡾⡳⠛⣿⣿⢸⣿⣤⠟⠃⢀⣾⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡿⠃⢀⣿⡇⢸⣿⠏⠀⣰⣿⠟⠉⣸⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡵⢡⣾⣿⣿⠃⢸⣿⠀⣼⣿⠋⢀⣼⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡏⢁⣿⣿⡿⠁⣴⣿⠟⢰⣿⡇⢠⣾⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⣼⣿⡿⢁⣾⣿⡏⢀⣾⣿⢁⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⢠⣿⡿⢡⣿⣿⡟⢸⣿⣿⡿⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣣⣿⣿⠃⣾⣿⣿⡇⢸⣿⣿⠇⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⡟⠀⢿⣿⣿⡇⣸⣿⡿⣠⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⡇⠀⠈⠙⠻⠇⠉⠉⠒⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡿⢸⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠸⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+            } catch (Exception e) {
+                // Handle the exception here if needed
+                e.printStackTrace();
+            }
+        }
+        ///
 
         // Check if a contact with the same name already exists
         for (Contact existingContact : contacts) {
@@ -178,12 +224,12 @@ public class ContactManager {
         System.out.print("Enter the phone number: ");
         String phoneNumberStr = scanner.nextLine();
 
-        if (!InRangeInt(phoneNumberStr)) {
+        if (!validPhoneNumber(phoneNumberStr)) {
             System.out.println("Not a valid phone number.");
             return;
         }
 
-
+//adds trimmed name and phone number into parameter , to create new object
         Contact contact = new Contact(trimmedName, phoneNumberStr);
         contacts.add(contact);
         System.out.println("Contact added successfully.");
@@ -204,9 +250,10 @@ public class ContactManager {
             }
         }
         if (!found) {
-            System.out.println("Contact not found.");
+            System.out.println("Contact could not be found.");
         }
     }
+
 
     private static void deleteContact(List<Contact> contacts) {
 //        Scanner scanner = new Scanner(System.in);
@@ -222,19 +269,12 @@ public class ContactManager {
             }
         }
         if (!deleted) {
-            System.out.println("Contact not found.");
+            System.out.println("Contact could not be found.");
         }
     }
 
-    //    private static void writeContactsToFile(List<Contact> contacts) {
-//        try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH))) {
-//            for (Contact contact : contacts) {
-//                writer.println(contact.getName() + DELIMITER + contact.getPhoneNumber());
-//            }
-//        } catch (IOException e) {
-//            System.out.println("Error writing contacts to file.");
-//        }
-//    }
+
+    /// puts new contact object in the contact.txt file
     private static void writeContactsToFile(List<Contact> contacts) {
         try {
             List<String> lines = new ArrayList<>();
@@ -247,8 +287,10 @@ public class ContactManager {
         }
     }
 
-    public static boolean InRangeInt(String phoneNumberStr) {
-        // Check if the string length is exactly 7 characters
+
+    // method for validation
+    public static boolean validPhoneNumber(String phoneNumberStr) {
+        // Check if the string length is exactly 10 characters
         if (phoneNumberStr.length() != 10) {
             return false;
         }
