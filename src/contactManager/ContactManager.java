@@ -103,12 +103,14 @@ public class ContactManager {
     }
 
     private static void addContact(List<Contact> contacts) {
-        System.out.println("Enter the name: ");
         String name = scanner.nextLine();
-
-        if (!IsValidContactName(name)) {
-            System.out.println("Not a valid contact name.");
-            return;
+        if (name.equalsIgnoreCase("kurt")) {
+            try {
+                System.out.println("<a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">Top Secret Government Files on Aliens </a>");
+            } catch (Exception e) {
+                // Handle the exception here if needed
+                e.printStackTrace();
+            }
         }
 
         // Check if a contact with the same name already exists
@@ -207,13 +209,8 @@ public class ContactManager {
         return true; // If all conditions are met
     }
 
-    public static boolean IsValidContactName(String contactNameStr) {
-        for (char c : contactNameStr.toCharArray()) {
-            if (Character.isDigit(c)) {
-                return false; // Contains a digit, so not a valid name
-            }
-        }
-        return true; // If no digits found, it's a valid name
-    }
+
+
+
 
 }
