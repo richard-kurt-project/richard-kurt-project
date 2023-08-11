@@ -103,8 +103,10 @@ public class ContactManager {
     }
 
     private static void addContact(List<Contact> contacts) {
+        System.out.print("Enter the contact name: ");
         String name = scanner.nextLine();
-        if (name.equalsIgnoreCase("kurt")) {
+        String trimmedName = name.trim();
+        if (trimmedName.equalsIgnoreCase("kurt")) {
             try {
                 System.out.println("<a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">Top Secret Government Files on Aliens </a>");
             } catch (Exception e) {
@@ -112,10 +114,62 @@ public class ContactManager {
                 e.printStackTrace();
             }
         }
+        if (trimmedName.equalsIgnoreCase("cat")) {
+            try {
+                System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                        "░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░\n" +
+                        "░░░░░░░░▄▀░░░░░░░░░░░░▄░░░░░░░▀▄░░░░░░░\n" +
+                        "░░░░░░░░█░░▄░░░░▄░░░░░░░░░░░░░░█░░░░░░░\n" +
+                        "░░░░░░░░█░░░░░░░░░░░░▄█▄▄░░▄░░░█░▄▄▄░░░\n" +
+                        "░▄▄▄▄▄░░█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██░░\n" +
+                        "░██▄▀██▄█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██░░\n" +
+                        "░░▀██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██░\n" +
+                        "░░░░▀████░▀░░░░▄░░░██░░░▄█░░░░▄░▄█░░██░\n" +
+                        "░░░░░░░▀█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██░\n" +
+                        "░░░░░░░▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀░░\n" +
+                        "░░░░░░█▀▀█████████▀▀▀▀████████████▀░░░░\n" +
+                        "░░░░░░████▀░░███▀░░░░░░▀███░░▀██▀░░░░░░\n" +
+                        "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            } catch (Exception e) {
+                // Handle the exception here if needed
+                e.printStackTrace();
+            }
+        }
+        if (trimmedName.equalsIgnoreCase("brian")) {
+            try {
+                System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠉⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠃⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⡇⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⢠⢱⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⡸⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢃⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⣠⠤⣀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⡾⠀⠀⠀⠀⠀⠀⢠⢶⢟⢻⣗⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⢠⠇⠈⠒⠊⠑⠚⠓⠒⠒⠦⣄⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⣀⡤⣄⠀⢸⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⣿⣦⠀⠀⠀⠀⠀\n" +
+                        "⡜⢁⣠⣶⠷⣼⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀\n" +
+                        "⢳⡾⠋⣠⣤⣿⠀⠀⠀⠀⠀⠀⠸⡀⠀⡀⠀⠀⠀⠀⠀⠀⢻⡿⠋⢠⣴⡒⠲⡄\n" +
+                        "⠀⠉⠓⠛⡿⡿⢢⡀⠀⣀⣀⡀⠀⠳⣄⢹⠿⣶⣶⠒⠒⠒⠋⡀⢀⣯⡈⢿⡆⢸\n" +
+                        "⠀⠀⠀⠀⢻⡵⢻⠑⠐⠓⠒⢮⠀⠀⠈⠩⣛⣒⣾⡀⢀⣠⣿⣽⣟⡿⠧⠼⠟⠃\n" +
+                        "⠀⠀⠀⠀⠀⠳⣙⢷⡄⠀⠀⢸⠀⠀⠀⠀⠀⠀⢣⢏⢩⡾⠗⢈⡼⠁⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠈⢻⡒⠒⠶⠥⠋⠀⠀⠀⠀⠀⠀⠻⣦⠴⠚⠁⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠱⣄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣯⠖⠁⠒⢤⠀⠀⠀⠀⠀⠀⢈⣼⡆⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠀⠀⠀⠀⣿⣇⣀⣀⣀⠠⠜⡟⠁⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⡃⠀⠀⠀⢸⠁⠀⡟⠀⠀⠀⠰⢇⠀⠀⠀⠀⠀⠀⠀\n" +
+                        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣅⣆⣀⣀⡼⠀⠀⠳⣄⣀⣀⣆⣾⠃⠀⠀⠀⠀⠀⠀");
+            } catch (Exception e) {
+                // Handle the exception here if needed
+                e.printStackTrace();
+            }
+        }
+
 
         // Check if a contact with the same name already exists
         for (Contact existingContact : contacts) {
-            if (existingContact.getName().equalsIgnoreCase(name)) {
+            if (existingContact.getName().equalsIgnoreCase(trimmedName)) {
                 System.out.println("Contact already exists.");
                 return;
             }
@@ -130,7 +184,7 @@ public class ContactManager {
         }
 
 
-        Contact contact = new Contact(name, phoneNumberStr);
+        Contact contact = new Contact(trimmedName, phoneNumberStr);
         contacts.add(contact);
         System.out.println("Contact added successfully.");
     }
