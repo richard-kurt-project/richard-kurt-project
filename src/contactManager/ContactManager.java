@@ -68,13 +68,16 @@ public class ContactManager {
 
     // main menu Method
     private static int showMainMenu() {
+        System.out.println("");
         System.out.println("Main Menu");
         System.out.println("1. View contacts");
         System.out.println("2. Add a new contact");
         System.out.println("3. Search a contact by name");
         System.out.println("4. Delete an existing contact");
         System.out.println("5. Exit");
+        System.out.println("");
         System.out.print("Enter an option (1, 2, 3, 4, or 5): ");
+        System.out.println("");
         int userChoice = scanner.nextInt();
         scanner.nextLine();
         return userChoice;
@@ -83,10 +86,10 @@ public class ContactManager {
     // Contact display format
     private static void viewContacts(List<Contact> contacts) {
         System.out.println("Contacts:");
-        System.out.println("Name\t\tPhone number");
-        System.out.println("------------------------");
+        System.out.println("Name\t\t\t\t  Phone number");
+        System.out.println("---------------------|----------------");
         for (Contact contact : contacts) {
-            System.out.println(contact.getName() + "\t\t |" + contact.getPhoneNumber());
+            System.out.println(contact.getName() + "\t\t\t\t |" + contact.getPhoneNumber());
         }
     }
 
@@ -238,6 +241,7 @@ public class ContactManager {
 
     private static void searchContactByName(List<Contact> contacts) {
 //        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Enter the name to search: ");
         String searchName = scanner.nextLine();
         boolean found = false;
@@ -291,7 +295,7 @@ public class ContactManager {
     // method for validation
     public static boolean validPhoneNumber(String phoneNumberStr) {
         // Check if the string length is exactly 10 characters
-        if (phoneNumberStr.length() != 10) {
+        if (phoneNumberStr.length() > 10) {
             return false;
         }
 
