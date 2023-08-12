@@ -227,11 +227,6 @@ public class ContactManager {
         System.out.print("Enter the phone number: ");
         String phoneNumberStr = scanner.nextLine();
 
-        if (!validPhoneNumber(phoneNumberStr)) {
-            System.out.println("Not a valid phone number.");
-            return;
-        }
-
 //adds trimmed name and phone number into parameter , to create new object
         Contact contact = new Contact(trimmedName, phoneNumberStr);
         contacts.add(contact);
