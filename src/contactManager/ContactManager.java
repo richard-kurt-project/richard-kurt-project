@@ -214,6 +214,15 @@ public class ContactManager {
                 e.printStackTrace();
             }
         }
+        if (trimmedName.equalsIgnoreCase("trickshot")) {
+            try {
+                System.out.println("https://www.youtube.com/watch?v=auAvDJlMOQ8");
+                System.out.println("Best trick shot reaction, PG13");
+            } catch (Exception e) {
+                // Handle the exception here if needed
+                e.printStackTrace();
+            }
+        }
         ///
 
         // Check if a contact with the same name already exists
